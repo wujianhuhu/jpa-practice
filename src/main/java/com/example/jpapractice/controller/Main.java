@@ -59,4 +59,13 @@ public class Main {
         return userService.findAllById(id);
     }
 
+    /**
+     * 尝试一下操作不同表
+     */
+    @RequestMapping("/printUpdateTelephoneByBusStationById/{id}")
+    public UserEntity printUpdateTelephoneByBusStationById(@PathVariable("id") int id){
+        userService.updateTelephoneByBusStationById(id);
+        return userService.findAllById(id);
+    }
+
 }
