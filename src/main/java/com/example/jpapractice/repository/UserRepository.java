@@ -58,4 +58,14 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
     @Transactional(rollbackOn = Exception.class)
     void updataTelephoneById(String telephone, int id);
 
+    /**
+     * 这是用来进行一次联表查询的
+     *
+     * @param id 参数id
+     */
+    @Query(value = "update user set user.telephone = (select name from bus_station where bus_station.id = 1094201500) where user.id = ?1", nativeQuery = true)
+    @Modifying
+    @Transactional(rollbackOn = Exception.class)
+    void updateTelephoneByBusStationById(int id);
+
 }

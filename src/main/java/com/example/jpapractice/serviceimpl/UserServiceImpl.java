@@ -38,4 +38,9 @@ public class UserServiceImpl implements UserService {
     public void updateTelephoneById(String telephone, int id) {
         userRepository.updataTelephoneById(telephone, id);
     }
+
+    @Override
+    public void updateTelephoneByBusStationById(int id) {
+        userRepository.updateTelephoneByBusStationById(id);
+    }
 }

@@ -39,4 +39,11 @@ public interface UserService {
      * @param id 参数id
      */
     void updateTelephoneById(String telephone, int id);
+
+    /**
+     * 这是用来联表查询的尝试
+     *
+     * @param id 参数id
+     */
+    void updateTelephoneByBusStationById(int id);
 }
